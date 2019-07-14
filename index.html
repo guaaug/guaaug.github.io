@@ -1,8 +1,847 @@
-<h1>Hello World</h1>
+<!DOCTYPE HTML>
+<html>
 
-<p>
-<a href="https://help.github.com/en/articles/using-jekyll-as-a-static-site-generator-with-github-pages">Blogging with Jekyll</a><br /><br />
-<a href="https://help.github.com/en/articles/using-a-custom-domain-with-github-pages">Custom URLs</a><br /><br />
-<a href="https://help.github.com/en/categories/github-pages-basics">Guides</a><br /><br />
-</p>
-<a href="jl.html">jl</a><br /><br />
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=7;IE=EDGE">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="alternate" media="handheld" href="#" />
+    <meta charset="utf-8">
+    <title>郭树礼的简历</title>
+    <style>
+        * {
+            outline: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+            color: #333;
+            word-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+
+        progress {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+        a {
+            color: #555;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #00b38a;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        p+p {
+            margin-top: 10px;
+        }
+
+        img {
+            border: 0;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 0;
+            padding: 0;
+            border: 1px solid #ededed;
+            border-radius: 0;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+        }
+
+        textarea {
+            overflow: auto;
+        }
+
+        label,
+        select,
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        input[type="radio"],
+        input[type="checkbox"],
+        input[type="file"] {
+            cursor: pointer;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            font-family: "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th,
+        td {
+            padding: 0;
+        }
+
+        strong {
+            font-weight: normal;
+        }
+
+        em,
+        i {
+            font-style: normal;
+        }
+
+        dl,
+        dt,
+        dd {
+            margin: 0;
+        }
+
+        ::selection {
+            color: #fff;
+            background-color: #00b38a;
+        }
+
+        ::-moz-selection {
+            color: #fff;
+            background-color: #00b38a;
+        }
+
+        ul,
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #container {
+            width: 720px;
+            margin: 50px auto 54px auto;
+            border: 1px solid #e3ebe9;
+            border-radius: 5px;
+        }
+
+        .mr-template {
+            padding: 50px 50px 10px;
+        }
+
+        .mr-template .mr-template_title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .mr-template .mr-template_title span {
+            font-size: 18px;
+            color: #333333;
+            font-weight: 600;
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .mr-template .mr-template_title span:before {
+            content: '';
+            display: block;
+            border-left: 3px solid #00B38A;
+            height: 16px;
+            width: 3px;
+            position: absolute;
+            left: -7px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .mr-template .mr_md_del {
+            display: none;
+        }
+
+        /***** 基本信息 ****/
+
+        .basic {
+            padding: 50px;
+            background: #FAFAFA;
+            border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid #E3EBE9;
+            display: flex;
+        }
+
+        .basic .basic-photo {
+            height: 88px;
+            width: 88px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .basic .basic-photo img {
+            height: 88px;
+            width: 88px;
+            position: absolute;
+            top: 0;
+            border-radius: 50%;
+        }
+
+        .basic .basic-photo .basic-photo_shadow {
+            display: none;
+        }
+
+        .basic .basic-photo:hover .basic-photo_shadow {
+            display: block;
+        }
+
+        .basic .basic-info {
+            position: relative;
+            width: 100%;
+            margin-left: 20px;
+            flex: 1;
+        }
+
+        .basic .basic-info .edit-btn {
+            position: absolute;
+            right: 0;
+            top: 4px;
+        }
+
+        .basic .basic-info .basic-name-area {
+            overflow: hidden;
+            height: 37px;
+            margin-bottom: 11px;
+        }
+
+        .basic .basic-info .basic-name {
+            float: left;
+            max-width: 250px;
+            font-size: 26px;
+            color: #333333;
+            font-weight: 600;
+            line-height: 37px;
+        }
+
+        .basic .basic-info .icon-sex {
+            width: 13px;
+            height: 13px;
+            float: left;
+            margin-top: 16px;
+            margin-left: 10px;
+            background: none;
+        }
+
+        .basic .basic-info .icon-sex.icon-sex__male {
+            background: url(https://www.lgstatic.com/common/image/pc/icon_man.png);
+        }
+
+        .basic .basic-info .icon-sex.icon-sex__female {
+            background: url(https://www.lgstatic.com/common/image/pc/icon_woman.png);
+        }
+
+        .basic .basic-info .basic-self {
+            margin-top: 20px;
+        }
+
+        .basic .basic-info p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 20px;
+            margin-top: 6px;
+        }
+
+        .basic .basic-info i {
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-tel_icon {
+            width: 11px;
+            height: 14px;
+            margin-right: 2px;
+            background: url(https://www.lgstatic.com/common/image/pc/icon_phone.png);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-email_icon {
+            width: 14px;
+            height: 11px;
+            margin-right: 2px;
+            background: url(https://www.lgstatic.com/common/image/pc/icon_mail.png);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-tel {
+            margin-right: 20px;
+        }
+
+        .basic-tel span {
+            vertical-align: middle;
+        }
+
+        .basic-email span {
+            vertical-align: middle;
+        }
+
+        /***** 基本信息 end ****/
+
+        /***** 自我描述 ****/
+
+        .per .per-self_content {
+            position: relative;
+        }
+
+        .per .per-self_content .per-self_des {
+            margin-top: 13px;
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+        }
+
+        .per .per-self_content .per-self_des p {
+            margin-top: 0;
+        }
+
+        .per .per-self_content .per-self_des ol {
+            list-style-type: decimal;
+            -webkit-padding-start: 20px;
+        }
+        .per .per-self_content .per-self_des ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        /***** 自我描述 end ****/
+
+        /***** 工作经历 ****/
+
+        .work-exp .work-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .work-exp .work-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+        }
+
+        .work-exp .work-exp_list .exp-list_top {
+            display: flex;
+            align-items: center;
+        }
+
+        .work-exp .work-exp_list .exp-list_top img {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 46px;
+            justify-content: space-between;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right p,
+        .work-exp .work-exp_list .exp-list_top .exp-list_right strong {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right strong {
+            font-weight: 600;
+        }
+
+        .work-exp .work-exp_list .tagboard {
+            margin: 20px 0 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content {
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+        }
+
+        .tagboard .tagboard-tag {
+            font-size: 12px;
+            color: #999;
+            line-height: 18px;
+            padding: 3px 10px;
+            border: 1px solid #EAEDEC;
+            border-radius: 100px;
+            margin-right: 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content ul, .work-exp .work-exp_list .exp-list_content_highlight ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content ol, .work-exp .work-exp_list .exp-list_content_highlight ol {
+            list-style-type: decimal;
+            -webkit-padding-start: 20px;
+        }
+        /***** 工作经历 end ****/
+
+        /***** 项目经历 ****/
+
+        .pro-exp .pro-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title {
+            font-size: 14px;
+            color: #333333;
+            font-weight: 600;
+            cursor: default;
+            display: flex;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title .exp-project_name, .pro-exp .pro-exp_list .exp-list_title .exp-project_company span {
+            max-width: 222px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title .exp-project_company {
+            display: flex;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_content,
+        .pro-exp .pro-exp_list .exp-project_des {
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+
+        .pro-exp .exp-list_title.active:hover {
+            color: #00B38A;
+            cursor: pointer;
+        }
+        .pro-exp .exp-project_url {
+            font-size: 14px;
+            color: #666;
+            line-height: 30px;
+        }
+        .pro-exp .pro-exp_list .exp-list_content ul, .pro-exp .pro-exp_list .exp-project_des ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_content ol,.pro-exp .pro-exp_list .exp-project_des ol{
+            list-style-type:decimal;-webkit-padding-start:20px
+        }
+
+        /***** 项目经历 end ****/
+
+        /***** 教育经历 ****/
+
+        .edu-exp .edu-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top {
+            display: flex;
+            align-items: center;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top img {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 46px;
+            justify-content: space-between;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right p,
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right strong {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right strong {
+            font-weight: 600;
+        }
+
+
+        /***** 教育经历 end ****/
+
+        /***** 社交主页 ****/
+
+        .social-page .social-page_list {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .social-page .social-page_list .social-page_content {
+            display: flex;
+        }
+
+        .social-page .social-page_list .social-page_content img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .social-page .social-page_list .social-page_content p {
+            font-size: 14px;
+            color: #666666;
+        }
+
+
+        /***** 社交主页 end ****/
+                /***** 图片作品 ****/
+
+        .portfolio-page .portfolio-list{
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .portfolio-page .portfolio-list .portfolio-content{
+            font-size: 14px;
+            color: #666666;
+        }
+
+
+        /***** 图片作品 end ****/
+    </style>
+</head>
+
+    <body>
+        <div id="container">
+            <!-- 基本信息 -->
+            <div class="basic" id="baseInfo">
+                <div class="basic-photo">
+                    <img class="mr_headimg user-avatar" id="userpic" src="https://www.lgstatic.com/i/image/M00/29/9E/Cgp3O1cwKYqAEp57AAAyo1LGi8w046.jpg" width="120" height="120" alt="头像"
+                    />
+                </div>
+                <div class="basic-info">
+                    <div class="basic-name-area">
+                        <p class="basic-name female">郭树礼</p>
+                            <i class="icon-sex icon-sex__male"></i>
+                    </div>
+                                <p>
+                                    <span class="basic-company">美团</span>
+                                    <span> / </span>
+                                    <span class="basic-job">软件开发工程师</span>
+                                </p>
+                            <p class="basic-self">
+                                    <span class="basic-exp">7年工作经验 / </span>
+                                    <span class="basic-edu">本科
+                                         / 
+                                    </span>
+                                    <span class="basic-age">30岁</span>
+                            </p>
+                    <p>
+                            <span class="basic-tel">
+                                <i class="basic-tel_icon"></i>
+                                <span>18611862004</span>
+                            </span>
+                            <span class="basic-email">
+                                <i class="basic-email_icon"></i>
+                                <span>guoshuli_gua@126.com</span>
+                            </span>
+                    </p>
+                </div>
+            </div>
+            <!-- /基本信息 -->
+
+            <!-- 自我描述 -->
+            <div class="mr-template per" id="perAbility">
+                <div class="mr-template_title">
+                    <span>自我描述</span>
+                </div>
+                <div class="tagboard integrative-tag">
+                    <div class="integrative-tag_content">
+                                <span class="tagboard-tag">责任心</span>
+                                <span class="tagboard-tag">时间管理</span>
+                                <span class="tagboard-tag">目标管理</span>
+                    </div>
+                </div>
+                <div class="per-self_content">
+                        <div class="per-self_des">
+                            <pre>做事认真、热爱编码、喜欢思考、追求进步<br />思维敏捷、有抗压能力<br />性格开朗、积极主动、热情友好</pre>
+                        </div>
+                </div>
+            </div>
+            <!-- /自我描述 -->
+            <!-- 工作经历 -->
+                <div class="mr-template work-exp" id="workExp">
+                    <div class="mr-template_title">
+                        <span>工作经历</span>
+                    </div>
+                    <ol class="work-exp_group">
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2017.01-至今</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image2/M00/07/C6/CgoB5lnNvcyAajDTAABMWHHOEU8883.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>美团</span>
+                                             ／
+                                                <span>住宿度假研发中心</span>
+                                        </strong>
+                                        <p>软件开发工程师</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                        <span class="tagboard-tag">后端</span>
+                                        <span class="tagboard-tag">Java</span>
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>负责美团度假供应商 直连接入平台 架构演进与日常需求开发；<br />负责美团分销平台 住宿度假分销 业务从0到1落地上线。</p>
+                                </div>
+                            </li>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2016.06-2017.01</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image2/M00/44/87/CgoB5lrMbFiAIiy1AAAlPWH-uls217.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>京东</span>
+                                             ／
+                                                <span>搜索与大数据平台部</span>
+                                        </strong>
+                                        <p>Java</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                        <span class="tagboard-tag">后端</span>
+                                        <span class="tagboard-tag">Java</span>
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>负责京东商城POP商家店铺分析类产品 `数据罗盘` 的功能维护性开发；<br />负责 `数据罗盘` 的升级产品 `数据智商` 的新产品开发；<br />负责 `数据罗盘` 和 `数据智商` 的下层数据查询系统 `业务数据服务接口` 的开发与维护。</p>
+                                </div>
+                            </li>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2014.04-2016.05</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image/M00/04/02/Cgp3O1bFYjuAVa8jAAAgWYB1an4025.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>北京因特睿软件有限公司</span>
+                                                                                    </strong>
+                                        <p>软件开发工程师</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                        <span class="tagboard-tag">后端</span>
+                                        <span class="tagboard-tag">Java</span>
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>参与讨论产品（燕云IaaS、燕云DaaS）的功能需求、产品框架及开发计划；<br />负责燕云IaaS和燕云DaaS后端应用服务的设计和开发工作；<br />参与燕云IaaS和燕云DaaS的功能测试及Bug修复工作。</p>
+                                </div>
+                            </li>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2012.09-2014.03</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image/M00/40/AB/CgpFT1lbBkCABiZ-AAAamAQZaN0051.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>中国软件与技术服务股份有限公司</span>
+                                                                                    </strong>
+                                        <p>软件开发工程师</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                        <span class="tagboard-tag">后端</span>
+                                        <span class="tagboard-tag">Java</span>
+                                </div>
+                                <div class="exp-list_content">
+                                    <p></p>
+<pre>针对需求方提出的需求进行需求分析；<br />讨论并设计技术实现方案；<br />对负责模块进行开发、测试并交付软件产品。</pre>
+<p></p>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /工作经历 -->
+            <!-- 教育经历 -->
+                <div class="mr-template edu-exp" id="eduExp">
+                    <div class="mr-template_title">
+                        <span>教育经历</span>
+                    </div>
+                    <ol class="edu-exp_group">
+                            <li class="edu-exp_list">
+                                <p class="exp-list_time">2007.09-2012.07</p>
+                                <div class="exp-list_top">
+                                    <img src="xidian.jpg" alt="学校Logo">
+                                    <div class="exp-list_right">
+                                        <strong>西安电子科技大学</strong>
+                                        <p>本科 / 软件工程</p>
+                                    </div>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /教育经历 -->
+            <!-- 项目经历 -->
+                <div class="mr-template pro-exp" id="proExp">
+                    <div class="mr-template_title">
+                        <span>项目经历</span>
+                    </div>
+                    <ol class="pro-exp_group">
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">度假直连平台架构演进</span>
+                                </p>
+                                <p class="exp-list_time">2017.12-至今</p>
+                                <div class="exp-project_des"><p> 度假直连平台的职责是负责和供应商以系统方式对接，支撑实现供应商产品在美团平台进行供给和售卖。简单说就是美团系统和商家系统之间的桥梁。<br /></p>
+<p>从2016年初直连系统建立以来，系统架构经历了3个历史阶段: <br />1.0架构 核心特征: all in one。 (质量、效率、工具不断完善)<br />2.0架构 核心特征: 标准化与差异化隔离(VIP供应商VS中小供应商)，VIP对接框架统一。<br />3.0架构 (2017.12~至今) 核心特征: 对接与策略分层，分别演进。对接: 基础设施、组件化沉淀。策略: 供给+预订领域拆分，策略与流程解耦。</p></div>
+                                <div class="exp-list_content">
+                                    <p>完成直连平台从架构2.0到架构3.0的演进；<br />将平台分为接入与策略两个领域，并实现拆分；<br />策略内部完成供给与预订的拆分；<br />将预订、供给核心流程作为稳定功能独立部署，并保持对易变策略的开放支持特性；<br />策略平台化、通用化建设，实现对多业务线、多场景的灵活复用能力。</p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">美团分销平台</span>
+                                </p>
+                                <p class="exp-list_time">2017.01-2017.11</p>
+                                <div class="exp-project_des"><p>美团分销平台是依托美团的优质渠道资源和服务能力，为OTA同行和小微分销商提供酒店和门票产品的分销业务。通过平台强大的库存消化能力提高产品的销售量。</p></div>
+                                <div class="exp-list_content">
+                                    <p>完成分销平台度假分销业务从0到1落地上线。</p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">京东商智</span>
+                                </p>
+                                <p class="exp-list_time">2016.06-2017.01</p>
+                                <div class="exp-project_des"><p>数据智商智商产品 融合京东云计算，跨越大数据、高并发、实时展示三大门槛，为京东商家提供专业、精准的店铺运营分析，提升店铺运营效率、降低运营成本、增强用户体验，是商户“精准营销、数据掘金”的强大工具。</p>
+<p>提供全方位的数据服务，包含店铺分析、行业数据板块，涵盖了20余项主题分析。维度包含了流量分析、销售分析、广告分析、仓储分析、配送分析、售后分析、行业分析等，时间粒度从分钟、小时、天、周到月，全面覆盖。</p>
+<p>该产品依托 BI和搜索部门的同仁，对京东主站的经营数据进行分析和整合，数据以实时或批处理方式落入以hbase和redis为主的数据存储中，通过REST接口以BS方式向商家展现丰富多样的分析数据。</p></div>
+                                <div class="exp-list_content">
+                                    <p>针对需求与PM进行讨论分析，挖掘深层需求，进行技术选型，接口设计，开发实现等。<br /></p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">燕云DaaS（数据聚合服务）</span>
+                                </p>
+                                <p class="exp-list_time">2015.10-2017.01</p>
+                                <div class="exp-project_des"><p>燕云DaaS是面向大数据的数据开采融合平台，0侵入重建出业务系统的数据接口，快速实时地挖掘出异构系统数据，形成多源数据共享池，为政务、金融、通信、能源、医疗、交通等大数据重点行业中的数据开放、融合与增值创新提供高效的平台支撑。</p>
+<p>将数据重建为接口 与 将接口提供为服务 分为两个独立系统，降低了产品的复杂性，增加了灵活性。</p>
+<p>使用到的技术栈有：Java相关，包括不限于JavaEE（CDI，EJB，JPA）JBoss、RESTEasy等</p>
+<p>责任描述：1、讨论产品的功能需求、产品框架及开发计划；2、负责后台需求功能的开发，包括：接口的制定与实现、业务逻辑的实现、数据库的设计等；3、参与产品前端的联调测试和Bug修复工作。<br /></p></div>
+                                <div class="exp-list_content">
+                                    <p>产品设计与开发</p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">燕云IaaS（私有云服务）</span>
+                                </p>
+                                <p class="exp-list_time">2014.04-2015.03</p>
+                                <div class="exp-project_des"><p>燕云IaaS是面向云计算的基础资源管理调度平台。支持接管VMware、KVM、Xen、Hyper-V、PowerVM等各种虚拟化资源，通过软件定义提供随需定制的资源交付服务。高效、安全、可靠。满足自主可控的云中心建设需求；满足异构虚拟化设施一体式管理需求；满足计算、存储、网络自动化运维需求；满足遗产IT环境配置整合需求。</p>
+<p>燕云IaaS是基于CloudStack的二次开发产品，产品的开发主要是对CloudStack的修改和新功能的添加。<br /></p>
+<p>使用到的技术栈：Java相关包括不限于Spring、Tomcat、MyBatis、MySQL、Redis等。</p>
+<p>责任描述：1、讨论产品的功能需求、产品框架及开发计划；2、负责需求功能的开发，包括：原生CloudStack缺陷的修改、新功能的实现等；3、参与产品的Bug修复工作。</p></div>
+                                <div class="exp-list_content">
+                                    <p>产品设计与开发</p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">富士电机株式会社 产品ExchangeUSE</span>
+                                </p>
+                                <p class="exp-list_time">2013.02-2014.03</p>
+                                <div class="exp-project_des"><p></p>
+<pre>开发&amp;维护富士电机株式会社的类ERP产品：ExchangeUSE
+1.维护ExchangeUSE既有系统；
+2.对系统新增需求进行分析、并进行技术方案设计和开发落地；
+  使用微软ASP.NET相关技术栈实现；
+  负责从前端到后端再到数据存储层的全栈设计与开发；
+  负责编写测试逻辑，进行单元测试、功能测试。<br /></pre>
+<p></p></div>
+                                <div class="exp-list_content">
+                                    <p>既有系统维护，新增需求全栈实现</p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">日本秋田曳船管理系统</span>
+                                </p>
+                                <p class="exp-list_time">2012.09-2013.02</p>
+                                <div class="exp-project_des"><p></p>
+<pre>开发日本秋田港口的拖拽船只业务管理系统<br />分析需求，设计负责模块的技术落地方案；
+负责从前端展示、交互，到后端业务逻辑、数据存储的整个链路的开发实现。
+使用到Java、Spring、Tomcat、JavaScript、JQuery、SQLServer等技术。
+编写测试逻辑并进行单元测试、集成测试。</pre>
+<p></p></div>
+                                <div class="exp-list_content">
+                                    <p>需求分析、技术方案、开发、自测、交付QA</p>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /项目经历 -->
+        </div>
+    </body>
+</html>
